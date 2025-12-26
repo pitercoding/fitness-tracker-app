@@ -1,16 +1,54 @@
+# ------------------------------
+# Sistema / OS
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
 # Backend (Java / Maven)
+# ------------------------------
 backend/target/
-backend/.idea/
 backend/*.iml
+backend/.idea/  # podemos deixar inteiro se não tiver arquivos úteis
 *.class
 
+# ------------------------------
 # Frontend (Angular / Node)
+# ------------------------------
 frontend/node_modules/
 frontend/dist/
 frontend/.angular/
 frontend/.vscode/
 frontend/package-lock.json
 
-# Sistema
-.DS_Store
-Thumbs.db
+# ------------------------------
+# IDEs
+# ------------------------------
+
+## IntelliJ IDEA ##
+# Ignore personal IDE files
+.idea/vcs.xml
+.idea/workspace.xml
+*.iws
+*.iml
+*.ipr
+
+## Eclipse / STS ##
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+## NetBeans ##
+/nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+build/
+
+## VS Code ##
+.vscode/
