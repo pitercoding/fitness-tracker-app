@@ -1,0 +1,49 @@
+<nz-layout class="layout">
+  <nz-sider>
+
+    <!--AVATAR + USER INFO-->
+    <div class="logo">
+      <nz-avatar nzSrc="/images/avatar.png" nzSize="large"></nz-avatar>
+
+      <div class="user-info">
+        <strong>Sarah Gomes</strong>
+      </div>
+    </div>
+
+    <!--LEFT MENU-->
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+
+      <li nz-menu-item routerLink="/dashboard">
+        <span nz-icon nzType="dashboard"></span>
+        <span>Dashboard</span>
+      </li>
+
+      <li nz-menu-item routerLink="/workout">
+        <span nz-icon nzType="split-cells"></span>
+        <span>Workout</span>
+      </li>
+
+      <li nz-menu-item routerLink="/activity">
+        <span nz-icon nzType="control"></span>
+        <span>Activity</span>
+      </li>
+
+      <li nz-menu-item routerLink="/goal">
+        <span nz-icon nzType="fund"></span>
+        <span>Goal</span>
+      </li>
+
+    </ul>
+  </nz-sider>
+
+  <!--RIGHT CONTENT-->
+  <nz-layout class="right-layout">
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+
+
+</nz-layout>
