@@ -1,5 +1,6 @@
 package com.pitercoding.backend.entity;
 
+import com.pitercoding.backend.dto.WorkoutDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,4 +24,16 @@ public class Workout {
     private int duration;
 
     private int caloriesBurned;
+
+    public WorkoutDTO getWorkoutDTO() {
+        WorkoutDTO workoutDTO = new WorkoutDTO();
+
+        workoutDTO.setId(id);
+        workoutDTO.setType(type);
+        workoutDTO.setDate(date);
+        workoutDTO.setDuration(duration);
+        workoutDTO.setCaloriesBurned(caloriesBurned);
+
+        return workoutDTO;
+    }
 }

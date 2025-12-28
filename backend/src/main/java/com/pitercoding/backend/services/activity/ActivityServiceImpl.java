@@ -15,13 +15,13 @@ public class ActivityServiceImpl implements ActivityService {
 
     private final ActivityRepository activityRepository;
 
-    public ActivityDTO postActivity(ActivityDTO dto) {
+    public ActivityDTO postActivity(ActivityDTO activityDTO) {
         Activity activity = new Activity();
 
-        activity.setDate(dto.getDate());
-        activity.setSteps(dto.getSteps());
-        activity.setDistance(dto.getDistance());
-        activity.setCaloriesBurned(dto.getCaloriesBurned());
+        activity.setDate(activityDTO.getDate());
+        activity.setSteps(activityDTO.getSteps());
+        activity.setDistance(activityDTO.getDistance());
+        activity.setCaloriesBurned(activityDTO.getCaloriesBurned());
 
         return activityRepository.save(activity).getActivityDTO();
     }

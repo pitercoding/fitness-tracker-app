@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ActivityService {
 
-    ActivityDTO postActivity(ActivityDTO dto);
+    ActivityDTO postActivity(ActivityDTO activityDTO);
     List<ActivityDTO> getActivities();
 }
