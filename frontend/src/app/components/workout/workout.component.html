@@ -5,31 +5,49 @@
 
   <div nz-row>
     <div nz-col nzFlex="2">
-      <nz-card nzType="inner" nzTitle="Post New Workout" style="margin-top: 16px;">
-        <form nz-form [formGroup]="workoutForm" class="custom-form" (ngSubmit)="submitWorkoutForm()">
-
+      <nz-card nzType="inner" nzTitle="Post New Workout" style="margin-top: 16px">
+        <form
+          nz-form
+          [formGroup]="workoutForm"
+          class="custom-form"
+          (ngSubmit)="submitWorkoutForm()"
+        >
           <nz-form-item>
             <nz-form-control nzErrorTip="Please, input the calories!">
-              <input type="text" nz-input formControlName="caloriesBurned" placeholder="Enter the calories you burned" />
+              <input
+                type="text"
+                nz-input
+                formControlName="caloriesBurned"
+                placeholder="Enter the calories you burned"
+              />
             </nz-form-control>
           </nz-form-item>
 
           <nz-form-item>
             <nz-form-control nzErrorTip="Please, input the duration!">
-              <input type="number" nz-input formControlName="duration" placeholder="Enter duration" />
+              <input
+                type="number"
+                nz-input
+                formControlName="duration"
+                placeholder="Enter duration"
+              />
             </nz-form-control>
           </nz-form-item>
 
           <nz-form-item>
             <nz-form-control nzErrorTip="Please, input the date!">
-              <nz-date-picker formControlName="date" style="width: 100%;"></nz-date-picker>
+              <nz-date-picker formControlName="date" style="width: 100%"></nz-date-picker>
             </nz-form-control>
           </nz-form-item>
 
           <nz-form-item nzErrorTip="Please, input the type!">
             <nz-form-control>
               <nz-select nzAllowClear nzPlaceHolder="Select the type" formControlName="type">
-                <nz-option *ngFor="let type of listOfType" [nzLabel]="type" [nzValue]="type"></nz-option>
+                <nz-option
+                  *ngFor="let type of listOfType"
+                  [nzLabel]="type"
+                  [nzValue]="type"
+                ></nz-option>
               </nz-select>
             </nz-form-control>
           </nz-form-item>
@@ -37,8 +55,22 @@
           <button nz-button nzType="primary" nzBlock class="w-100" [disabled]="workoutForm.invalid">
             Post Workout
           </button>
-
         </form>
+      </nz-card>
+    </div>
+    <div nz-col nzFlex="3" style="margin-left: 20px">
+      <nz-card nzType="inner" nzTitle="Past Workouts" style="margin-top: 16px">
+        <div nz-card-grid *ngFor="let workout of workouts" style="width: 100%">
+          <div nz-col nzSpan="30">
+            Calories Burned: <strong>{{ workout.caloriesBurned }}</strong>
+            -
+            Duration: <strong>{{ workout.duration }}</strong>
+            -
+            Date: <strong>{{ workout.date | date }}</strong>
+            -
+            Type: <strong>{{ workout.type }}</strong>
+          </div>
+        </div>
       </nz-card>
     </div>
   </div>
