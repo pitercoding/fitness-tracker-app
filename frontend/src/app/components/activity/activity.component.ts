@@ -1,4 +1,4 @@
-import { UserService } from '../../services/activity.service';
+import { UserService } from '../../services/user.service';
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared-module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -35,7 +35,7 @@ export class ActivityComponent {
     this.getAllActivities();
   }
 
-  submitForm() {
+  submitActivityForm() {
     this.userService.postActivity(this.activityForm.value).subscribe(res => {
       this.message.success("Activity posted successfully!", { nzDuration: 5000 });
       this.activityForm.reset();
