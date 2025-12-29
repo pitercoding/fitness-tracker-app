@@ -11,6 +11,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  /* ACTIVITY */
   postActivity (activityDto: any): Observable<any> {
     return this.http.post(BASIC_URL + "/api/activity", activityDto);
   }
@@ -19,6 +20,7 @@ export class UserService {
     return this.http.get(BASIC_URL + "/api/activities");
   }
 
+  /* WORKOUT */
   postWorkout (workoutDto: any): Observable<any> {
     return this.http.post(BASIC_URL + "/api/workout", workoutDto);
   }
@@ -27,11 +29,16 @@ export class UserService {
     return this.http.get(BASIC_URL + "/api/workouts");
   }
 
+  /* GOAL */
   postGoal (goalDto: any): Observable<any> {
     return this.http.post(BASIC_URL + "/api/goal", goalDto);
   }
 
   getGoals(): Observable<any> {
     return this.http.get(BASIC_URL + "/api/goals");
+  }
+
+  updateGoalStatus(id: number): Observable<any> {
+    return this.http.get(BASIC_URL + "/api/goal/status/" + id);
   }
 }

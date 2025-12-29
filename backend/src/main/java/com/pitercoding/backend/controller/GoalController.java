@@ -20,7 +20,25 @@ public class GoalController {
         try {
             return ResponseEntity.status(HttpStatus.CREATED).body(goalService.postGoal(goalDTO));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create goal. Please try again later.");
+        }
+    }
+
+    @GetMapping("/goals")
+    public ResponseEntity<?> getGoals(){
+        try {
+            return ResponseEntity.ok(goalService.getGoals());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to fetch all goals. Please try again later.");
+        }
+    }
+
+    @GetMapping("/goal/status/{id}")
+    public ResponseEntity<?> updateStatus(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(goalService.updateGoalStatus(id));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 }
