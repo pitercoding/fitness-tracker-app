@@ -12,3 +12,27 @@ canvas {
   width: 100% !important;
   height: 100% !important;
 }
+
+@media (max-width: 1200px) {
+  .chart-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .chart-container {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 260px; /* mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    height: 220px;
+  }
+}
