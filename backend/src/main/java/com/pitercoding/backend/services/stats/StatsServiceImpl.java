@@ -1,11 +1,19 @@
 package com.pitercoding.backend.services.stats;
 
+import com.pitercoding.backend.dto.GraphDTO;
 import com.pitercoding.backend.dto.StatsDTO;
+import com.pitercoding.backend.entity.Activity;
+import com.pitercoding.backend.entity.Workout;
 import com.pitercoding.backend.repository.ActivityRepository;
 import com.pitercoding.backend.repository.GoalRepository;
 import com.pitercoding.backend.repository.WorkoutRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -45,5 +53,18 @@ public class StatsServiceImpl implements StatsService {
         statsDTO.setDuration(totalWorkoutDuration != null ? totalWorkoutDuration : 0);
 
         return statsDTO;
+    }
+
+    public GraphDTO getGraphStats() {
+        Pageable pageable = PageRequest.of(0, 7);
+
+        List<Workout> workouts = workoutRepository.findLast7Workouts(pageable);
+        List<Activity> activities = activityRepository.findLast7Activities(pageable);
+
+        GraphDTO graphDTO = new GraphDTO();
+        graphDTO.setWorkouts(workouts.stream().map(Workout::getWorkoutDTO).collect(Collectors.toList()));
+        graphDTO.setActivities(activities.stream().map(Activity::getActivityDTO).collect(Collectors.toList()));
+
+        return graphDTO;
     }
 }

@@ -11,11 +11,21 @@ import { SharedModule } from '../../shared/shared-module';
 export class DashboardComponent {
 
   statsData: any;
+  workouts: any;
+  activities: any;
 
   constructor(private userService: UserService){}
 
   ngOnInit() {
     this.getStats();
+    this.getGraphStats();
+  }
+
+  getGraphStats(){
+    this.userService.getGraphStats().subscribe(res => {
+      this.workouts = res.workouts;
+      this.activities = res.activities;
+    })
   }
 
   getStats() {

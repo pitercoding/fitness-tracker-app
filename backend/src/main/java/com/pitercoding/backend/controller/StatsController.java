@@ -1,5 +1,6 @@
 package com.pitercoding.backend.controller;
 
+import com.pitercoding.backend.dto.GraphDTO;
 import com.pitercoding.backend.services.stats.StatsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,5 +20,16 @@ public class StatsController {
     @GetMapping("/stats")
     public ResponseEntity<?> getStatus() {
         return ResponseEntity.ok(statsService.getStats());
+    }
+
+    @GetMapping("/graphs")
+    public ResponseEntity<?> getGraphStats() {
+        GraphDTO graphDTO = statsService.getGraphStats();
+
+        if (graphDTO != null) {
+            return ResponseEntity.ok(graphDTO);
+        } else {
+            return ResponseEntity.status(404).body(null);
+        }
     }
 }
