@@ -2,8 +2,8 @@
 
 <p align="center">
   🌎 <strong>Languages:</strong><br>
-  <a href="README.md">🇧🇷 Portuguese</a> |
-  <a href="README.en.md">🇺🇸 English</a>
+  <a href="README.pt.md">🇧🇷 Portuguese</a> |
+  <a href="README.md">🇺🇸 English</a>
 </p>
 
 **Fitness Tracker** é uma aplicação full-stack projetada para **acompanhar treinos, atividades e metas pessoais**. Os usuários podem registrar treinos e atividades, definir metas e visualizar estatísticas e progresso através de gráficos dinâmicos.
