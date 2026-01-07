@@ -1,6 +1,10 @@
 <h1 align="center"> <img src="frontend/public/images/logo-light.png" alt="Logo Fitness Tracker" width="40" style="vertical-align: middle; margin-right: 10px;"> Fitness Tracker </h1>
 
-# 🧠 Description
+<p align="center">
+  🌎 <strong>Languages:</strong><br>
+  <a href="README.md">🇧🇷 Portuguese</a> |
+  <a href="README.en.md">🇺🇸 English</a>
+</p>
 
 **Fitness Tracker** is a full-stack application designed to **track workouts, activities, and personal goals**. Users can log workouts and activities, set goals, and visualize statistics and progress through dynamic charts.
 
@@ -81,22 +85,22 @@ During development, I strengthened skills in:
 - Local setup for development
 - Production (In progress)
 
-# 🖼️ Screenshots & Visuals
+## 🖼️ Screenshots & Visuals
 
-## Dashboard
+### Dashboard
 - Shows total calories, steps, distance, time spent, and goals
 - Visualizes recent workouts and activities with line charts
 
 ![Dashboard view](frontend/public/images/dashboard.png)
 
-## Workouts & Activities
+### Workouts & Activities
 - Forms to log workouts and activities
 - Lists of past entries with edit/update functionality
 
 ![Workout view](frontend/public/images/workout.png)
 ![Activity view](frontend/public/images/activity.png)
 
-## Goals
+### Goals
 - Form to post new goals with start/end dates
 - Lists of past goals with ability to mark as achieved
 
@@ -154,6 +158,6 @@ This project is licensed under the **MIT License** — free to use, study, and m
 
 ## 🧑‍💻 Author
 
-**Piter Gomes** — Computer Science Student & Full-Stack Developer  
+**Piter Gomes** — Computer Science Student (5th Semester) & Full-Stack Developer  
 
 📧 [Email](mailto:piterg.bio@gmail.com) | 💼 [LinkedIn](https://www.linkedin.com/in/piter-gomes-4a39281a1/) | 💻 [GitHub](https://github.com/pitercoding) | 🌐 [Portfolio](https://portfolio-pitergomes.vercel.app/)
